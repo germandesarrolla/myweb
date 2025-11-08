@@ -4,20 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>German Web Apps</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Sample Page</h1>
+        <h1>¡Hola, soy Germán! Y ésta es mi web.</h1>
+        <div>
+            <h2>Tengo 27 años y estoy en la búsqueda de mi primer empleo bajo el puesto de programador. Todo empezó desde los 13 años y siguió vigente hasta el día de hoy, interesandome actualmente en el desarrollo web. Estoy abierto a aprender nuevas tecnologías y lo que sea necesario para demostrar mi utilidad en el puesto.</h2>
+            <h3>Asímismo, soy Freelancer. Puedo convertir tus necesidades en aplicaciones que ayuden y potencien tu negocio. Si estás aqui por ello, haz click en este botón</h3>
+        </div>
     </header>
     <main>
+        <section id="techs">
+            <h2>Ésta es la lista de lenguajes y frameworks que he utilizado a lo largo de mi formación personal, y para los cuales tengo innumerables ejercicios realizados con los mismos.</h2>
+
+            <div class="carousel" aria-label="Carrusel de tecnologías">
+                <button class="carousel-button prev" aria-label="Anterior">‹</button>
+                <div class="cards-wrapper">
+                    <div class="cards">
+                        <div class="card">
+                            <img src="img/c_icon.ico" alt="C++ ICON">
+                            <p>C++</p>
+                        </div>
+                        <div class="card">
+                            <img src="img/c_icon.ico" alt="C++ ICON">
+                            <p>C++</p>
+                        </div>
+                        <div class="card">
+                            <img src="img/c_icon.ico" alt="C++ ICON">
+                            <p>C++</p>
+                        </div>
+                        <div class="card">
+                            <img src="img/c_icon.ico" alt="C++ ICON">
+                            <p>C++</p>
+                        </div>
+                        <div class="card">
+                            <img src="img/c_icon.ico" alt="C++ ICON">
+                            <p>C++</p>
+                        </div>
+                        <div class="card">
+                            <img src="img/c_icon.ico" alt="C++ ICON">
+                            <p>C++</p>
+                        </div>
+                        <div class="card">
+                            <img src="img/c_icon.ico" alt="C++ ICON">
+                            <p>C++</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-button next" aria-label="Siguiente">›</button>
+            </div>
+        </section>
         <section>
-            <h2>About</h2>
-            <p>This is a sample webpage created to demonstrate HTML structure.</p>
+            <h2>Éstas son las instituciones donde he adquirido todo mi conocimiento</h2>
+            <div class="card big">
+                <img src="img/utn.png" alt="C++ ICON">
+                <p>Universidad Tecnológica Nacional, Santa Fe Capital</p>
+            </div>
+            <div class="card big">
+                <img src="img/ies.png" alt="IES ICON">
+                <p>Instituto de Estudios Superiores, Santa Fe Capital</p>
+            </div>
+            <div class="card big">
+                <img src="img/coderhous.png" alt="CODER ICON">
+                <p>CODERHOUSE - Plataforma de cursos online</p>
+            </div>
         </section>
     </main>
     <footer>
+        <h1>¡Grácias por visitarme!</h1>
         <p>&copy; 2025 German Web Apps</p>
     </footer>
 </body>
+    <script src="scripts.js"></script>
 </html>
