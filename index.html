@@ -10,17 +10,26 @@
 </head>
 <body>
     <header>
-        <div>
-            <div>
-                <h1>¡Hola, soy Germán!</h1>
-                <span>Y ésta es mi sencilla web.</span>
-            </div>
-            <p>Soy programador y desarrollador de software, y estoy en búsqueda de una oportunidad laboral. Todo empezó desde los 13 años y siguió vigente hasta el día de hoy, interesandome actualmente en el desarrollo web. Estoy abierto a aprender nuevas tecnologías y lo que sea necesario para demostrar mi utilidad en el puesto. <a id="link-contratar" class="meta" href="#contact">¡CONTRÁTAME!</a></p>
+    <div class="header-content">
+        <div class="titulos">
+            <h1 class="titulo-principal">¡Hola, soy Germán!</h1>
+            <h2 class="subtitulo">Y ésta es mi sencilla web.</h2>
         </div>
-        <div>
-            <h4>Asímismo, soy Freelancer. Puedo convertir tus necesidades en aplicaciones que ayuden y potencien tu negocio. Si estás aqui por ello, haz click en este <a id="link-freelance" class="meta" href="#contact">botón</a></h4>
+        <p class="texto1">
+        Soy desarrollador y programador de software, y estoy en búsqueda de una oportunidad laboral. 
+        Todo empezó desde los 13 años y siguió vigente hasta el día de hoy, interesándome por el desarrollo web. 
+        Estoy abierto a aprender nuevas tecnologías y lo que sea necesario para demostrar mi utilidad en el puesto.
+        </p>
+        <p class="texto2">
+        Asímismo, <strong>¡soy F r e e l a n c e r !</strong> Puedo convertir tus necesidades en aplicaciones que ayuden y potencien tu negocio. Simplemente, házmelo saber en el formulario de contacto al final de la página.
+        </p>
+        <div class="titulos">
+            <button id="link-contratar" class="btn-contacto">Click aquí para oportunidad laboral</button>
+            <button id="link-freelance" class="btn-contacto">Click aquí para requerir mis servicios</button>
         </div>
-    </header> 
+    </div>
+    </header>
+
 
     <main>
         <section id="techs">
@@ -104,7 +113,7 @@
     </main>
     <section id="contact" class="contact-section">
         <h2>Contacto</h2>
-        <form action="https://formsubmit.co/c88215cf0f554d5920b9e20f5309a69e" method="POST" class="contact-form">
+        <form action="https://formsubmit.co/germandesarrolla@gmail.com" method="POST" class="contact-form">
             <!-- Redirect después del envío: redirige de nuevo a la página con ?sent=1 y al ancla #contact -->
             <input type="hidden" name="_next" value="https://germandesarrolla.github.io/myweb/index.html?sent=1#contact">
             <input type="hidden" name="_subject" id="emailSubject" value="CONTRÁTAME">
@@ -134,15 +143,10 @@
             <button type="submit" class="submit-btn">Enviar Mensaje</button>
         </form>
     </section>
-
     <footer>
         <h1>¡Grácias por visitarme!</h1>
         <p>&copy; 2025 German Web Apps</p>
     </footer>
 </body>
     <script src="scripts.js"></script>
-
 </html>
-
-
-

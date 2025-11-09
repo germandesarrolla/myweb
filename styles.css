@@ -11,7 +11,6 @@
     --visible-count: 6;
     --card-gap: 0.75rem;
     --section-spacing: 5rem;
-    --content-width: 1200px;
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
     --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
@@ -29,9 +28,7 @@ body{
     background: var(--bg);
     line-height: 1.45;
     -webkit-font-smoothing: antialiased;
-    max-width: var(--content-width);
     margin: 0 auto;
-    padding-inline: 2rem;
     position: relative;
 }
 
@@ -53,19 +50,19 @@ body::before {
 header{
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    min-height: 600px;
+    min-height: 100vh;
     padding: 2rem;
-    width: 100%;
     color: #fff;
     background-image: url('img/header.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     isolation: isolate; 
+    text-align: center;
 }
+
 header::before{
     content: '';
     position: absolute;
@@ -80,25 +77,78 @@ header > *{
     text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
 }
 
-header div{
-    display: flex;
-    line-height: 2.1rem;
-}
-header div div{
-    display: flex;
+.header-content {
+    display:flex;
     flex-direction: column;
-    width:70%;
-    justify-content: end;
-}
-header p{
-    padding-top:150px;
-    padding-left:60px;
+    align-items: center;
     text-align: center;
-}
-header span{
-    text-decoration: underline;
+    max-width: 1000px;
+    position: relative;
+    z-index: 1;
 }
 
+.titulos {
+  display: flex;
+  justify-content: center;
+  align-items: baseline; /* mantiene línea visual */
+  flex-wrap: wrap; /* si no entra, baja */
+  gap: 0.5rem;
+}
+
+
+
+.titulo-principal {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  animation: caerConRebote 1.5s ease-out forwards;
+}
+
+.subtitulo {
+  font-size: 1.5rem;
+  color: #ccc;
+  font-weight: 400;
+  opacity: 0;
+  animation: deslizarDesdeIzquierda 1.5s ease-out 1.2s forwards; /* delay 1.2s */
+}
+
+.texto1, .texto2 {
+  opacity: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 1.5rem;
+  animation: aparecerSuave 1.2s ease-out forwards;
+}
+
+.texto1 {
+  animation-delay: 2.5s;
+}
+
+.texto2 {
+  animation-delay: 3.8s;
+}
+
+/* --- BOTÓN --- */
+.btn-contacto {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  opacity: 0;
+  animation: aparecerSuave 1.2s ease-out 5s forwards;
+}
+
+.btn-contacto:hover {
+  background-color: #1e40af;
+  transform: scale(1.05);
+}
+
+/* 
 .meta{
     margin: 0.75rem 0 0 0;
     padding: 0.6rem 0.8rem;
@@ -109,13 +159,16 @@ header span{
     font-size: 0.9rem;
     justify-self: start;
     text-decoration: none;
-}
+} */
+
 /* Animaciones */
 section {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
+  /* animation: fadeInUp 0.8s ease forwards; */
+  animation: aparecerSuave 1.2s ease-out forwards;
 }
+
 section{
     /* organizar el título en una fila completa y las tarjetas debajo como flex items */
     display: flex;
@@ -166,6 +219,7 @@ section h2::after {
     background: linear-gradient(90deg, var(--accent), #60a5fa);
     border-radius: 2px;
 }
+
 /* mostrar las tarjetas una al lado de la otra */
 section .card{
     /* ahora las tarjetas son flex items con un ancho base definido por variable */
@@ -291,49 +345,6 @@ footer{
     color: var(--muted);
 }
 
-/* Puntos de quiebre responsive */
-@media (max-width: 900px){
-    :root{ --visible-count: 4; }
-    header{ 
-        min-height: 320px; 
-        padding: 1.5rem;
-        text-align: center;
-    }
-    header div{
-        flex-direction: column;
-    }
-    header div div{
-        width:auto;
-    }
-    header p{
-        padding:0;
-    }
-    .carousel-button{ position: absolute; }
-    .carousel-button.prev{ left: 2rem; }
-    .carousel-button.next{ right: 2rem; }
-
-}
-
-@media (max-width: 600px){
-    :root{ 
-        --visible-count: 3;
-    }
-    header{
-        min-height: 260px;
-        padding: 1rem;
-        flex-direction: column;
-        text-align: center;
-    }
-    header h1{ font-size: 1.6rem; }
-    section h2{ font-size: 1.1rem; }
-    section .card{ flex-basis: 100%; }
-    section .card.big{ flex-basis: 100%; }
-    /* prevent any accidental horizontal page scroll on small screens */
-    body{ 
-        padding-inline: 0.5rem;
-     }
-}
-
 /* Estilos para el formulario de contacto */
 .contact-section {
     background: linear-gradient(to bottom, var(--bg), #fff);
@@ -403,12 +414,6 @@ footer{
     transform: translateY(0);
 }
 
-@media (max-width: 600px) {
-    .contact-form {
-        padding: 1.5rem;
-    }
-}
-
 /* Success message under the contact form */
 .form-success{
     max-width: 640px;
@@ -427,9 +432,58 @@ footer{
     animation: fadeInUp 360ms ease both;
 }
 
+/* Puntos de quiebre responsive */
+@media (max-width: 900px){
+    :root{ --visible-count: 4; }
+    header{ 
+        padding: 1.5rem;
+        text-align: center;
+    }
+    .carousel-button{ position: absolute; }
+    .carousel-button.prev{ left: 2rem; }
+    .carousel-button.next{ right: 2rem; }
+
+}
+
+@media (max-width: 600px){
+    :root{ 
+        --visible-count: 3;
+    }
+    header{
+        text-align: center;
+    }
+    section h2{ font-size: 1.1rem; }
+    section .card{ flex-basis: 100%; }
+    section .card.big{ flex-basis: 100%; }
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
 @keyframes fadeInUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Rebote vertical para el primer texto */
+@keyframes caerConRebote {
+  0% { transform: translateY(-150%); opacity: 0; }
+  60% { transform: translateY(0); opacity: 1; }
+  75% { transform: translateY(-20px); }
+  90% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+/* Entrada desde la izquierda */
+@keyframes deslizarDesdeIzquierda {
+  0% { transform: translateX(-50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Fade in suave hacia arriba */
+@keyframes aparecerSuave {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }

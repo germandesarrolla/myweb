@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   // If the page was redirected after a successful form submit, show success message
   function getQueryParam(name) {
     const params = new URLSearchParams(window.location.search);
@@ -143,4 +144,5 @@ document.addEventListener('DOMContentLoaded', () => {
       container.scrollBy({ left: e.deltaX, behavior: 'auto' });
     }
   }, { passive: false });
+
 });
