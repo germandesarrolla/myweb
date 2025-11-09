@@ -334,6 +334,99 @@ footer{
      }
 }
 
+/* Estilos para el formulario de contacto */
+.contact-section {
+    background: linear-gradient(to bottom, var(--bg), #fff);
+    padding: var(--section-spacing) 1rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #f8fafc;
+    color: var(--text);
+    font-size: 1rem;
+    transition: border-color 0.15s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+/* Success message under the contact form */
+.form-success{
+    max-width: 640px;
+    margin: 1rem auto 2rem;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    background: #ecfdf5; /* light green */
+    color: #065f46;
+    border: 1px solid #bbf7d0;
+    box-shadow: 0 4px 12px rgba(6,95,70,0.06);
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-success[role="status"]{
+    animation: fadeInUp 360ms ease both;
+}
+
 @keyframes fadeInUp {
   to {
     opacity: 1;
